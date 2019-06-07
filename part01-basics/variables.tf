@@ -9,6 +9,18 @@ variable "resource_pattern" {
   default     = "azcrashcourses-neu-dev"
 }
 
+# network variables
+variable "vnet_address_space" {
+  description = "vnet address space"
+  type        = list(string)
+  default     = ["10.0.0.0/16"]
+}
+
+variable "subnet_address_prefix" {
+  description = "subnet address prefix"
+  default     = "10.0.1.0/24"
+}
+
 # tags variables
 variable "name" {
   description = "default resource name in tag block"
