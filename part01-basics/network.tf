@@ -1,8 +1,3 @@
-# Azure network configuration
-data "azurerm_resource_group" "dev" {
-  name = "${var.resource_pattern}-rg"
-}
-
 # Azure network security group
 resource "azurerm_network_security_group" "nsg" {
   name                = "${var.resource_pattern}-nsg"

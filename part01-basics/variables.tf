@@ -21,6 +21,17 @@ variable "subnet_address_prefix" {
   default     = "10.0.1.0/24"
 }
 
+# virtual machine variables
+variable "vm_size" {
+  description = "virtual machine size"
+  default     = "Standard_B1s"
+}
+
+variable "vm_admin_user" {
+  description = "virtual machine user"
+  default     = "deployer"
+}
+
 # tags variables
 variable "name" {
   description = "default resource name in tag block"
