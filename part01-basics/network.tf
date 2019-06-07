@@ -49,3 +49,18 @@ resource "azurerm_virtual_network" "vnet" {
     project = "${var.project}"
   }
 }
+
+resource "azurerm_public_ip" "public_ip" {
+  name                    = "${var.resource_pattern}-publicip"
+  location                = "${data.azurerm_resource_group.dev.location}"
+  resource_group_name     = "${data.azurerm_resource_group.dev.name}"
+  allocation_method       = "Dynamic"
+  idle_timeout_in_minutes = 30
+
+  tags = {
+    name = "${var.name}-publicip"
+    environment = "${var.environment}"
+    owner = "${var.resource_owner}"
+    project = "${var.project}"
+  }
+}
