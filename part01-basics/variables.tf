@@ -4,9 +4,9 @@ variable "location" {
   default     = "North Europe"
 }
 
-variable "resource_group_name" {
-  description = "project resource group"
-  default     = "azcrashcourses-neu-dev-rg"
+variable "resource_pattern" {
+  description = "project resource naming pattern"
+  default     = "azcrashcourses-neu-dev"
 }
 
 # tags variables
