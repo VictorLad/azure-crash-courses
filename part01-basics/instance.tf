@@ -34,7 +34,7 @@ resource "azurerm_virtual_machine" "vm" {
   delete_data_disks_on_termination = true
 
   storage_image_reference {
-    id  = "/subscriptions/${data.azurerm_subscription.current.id}/resourceGroups/${data.azurerm_resource_group.dev.name}/providers/Microsoft.Compute/images/centos7v3-openjdk11"
+    id  = "${data.azurerm_subscription.current.id}/resourceGroups/${data.azurerm_resource_group.dev.name}/providers/Microsoft.Compute/images/centos7v3-openjdk11"
   }
 
   storage_os_disk {
