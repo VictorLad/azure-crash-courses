@@ -10,10 +10,22 @@ resource "azurerm_network_security_group" "nsg" {
     direction                   = "Inbound"
     access                      = "Allow"
     protocol                    = "Tcp"
-    source_port_range           = "8090"
+    source_port_range           = "80"
     destination_port_range      = "80"
-    source_address_prefix       = "*"
-    destination_address_prefix  = "*"
+    source_address_prefix       = "Internet"
+    destination_address_prefix  = "VirtualNetwork"
+  }
+
+  security_rule {
+    name                        = "${var.resource_pattern}-nsr-ssh-inbound"
+    priority                    = 101
+    direction                   = "Inbound"
+    access                      = "Allow"
+    protocol                    = "Tcp"
+    source_port_range           = "22"
+    destination_port_range      = "22"
+    source_address_prefix       = "Internet"
+    destination_address_prefix  = "VirtualNetwork"
   }
 
   tags = {

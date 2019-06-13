@@ -1,3 +1,6 @@
+# get subscription information
+data "azurerm_subscription" "current" {}
+
 # get resource group information
 data "azurerm_resource_group" "dev" {
   name = "${var.resource_pattern}-rg"
